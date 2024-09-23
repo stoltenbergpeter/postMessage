@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Child Page</title>
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("messageInput").value;
+            // Send the message to the parent window
+            window.parent.postMessage(message, "*"); // Replace '*' with specific origin for security
+        }
+    </script>
+</head>
+<body>
+    <h1>Child Page</h1>
+    <input type="text" id="messageInput" placeholder="Enter message here">
+    <button onclick="sendMessage()">Send Message to Parent</button>
+</body>
+</html>
